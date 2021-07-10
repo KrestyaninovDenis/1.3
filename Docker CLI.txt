@@ -1,0 +1,224 @@
+1.
+
+docker pull busybox
+
+Using default tag: latest
+latest: Pulling from library/busybox
+Digest: sha256:930490f97e5b921535c153e0e7110d251134cc4b72bbb8133c6a5065cc68580d
+Status: Image is up to date for busybox:latest
+docker.io/library/busybox:latest
+
+2.
+
+docker run --name pinger busybox ping netology.ru
+
+PING netology.ru (172.67.43.83): 56 data bytes
+64 bytes from 172.67.43.83: seq=0 ttl=60 time=0.925 ms
+64 bytes from 172.67.43.83: seq=1 ttl=60 time=0.596 ms
+64 bytes from 172.67.43.83: seq=2 ttl=60 time=0.735 ms
+64 bytes from 172.67.43.83: seq=3 ttl=60 time=0.809 ms
+64 bytes from 172.67.43.83: seq=4 ttl=60 time=0.735 ms
+64 bytes from 172.67.43.83: seq=5 ttl=60 time=0.627 ms
+64 bytes from 172.67.43.83: seq=6 ttl=60 time=0.691 ms
+^C
+--- netology.ru ping statistics ---
+7 packets transmitted, 7 packets received, 0% packet loss
+round-trip min/avg/max = 0.596/0.731/0.925 ms
+
+3.
+
+docker ps -a
+
+CONTAINER ID   IMAGE     COMMAND              CREATED              STATUS                          PORTS     NAMES
+04ed38b9133a   busybox   "ping netology.ru"   About a minute ago   Exited (0) About a minute ago             pinger
+
+4.
+
+docker logs pinger
+
+PING netology.ru (172.67.43.83): 56 data bytes
+64 bytes from 172.67.43.83: seq=0 ttl=60 time=0.925 ms
+64 bytes from 172.67.43.83: seq=1 ttl=60 time=0.596 ms
+64 bytes from 172.67.43.83: seq=2 ttl=60 time=0.735 ms
+64 bytes from 172.67.43.83: seq=3 ttl=60 time=0.809 ms
+64 bytes from 172.67.43.83: seq=4 ttl=60 time=0.735 ms
+64 bytes from 172.67.43.83: seq=5 ttl=60 time=0.627 ms
+64 bytes from 172.67.43.83: seq=6 ttl=60 time=0.691 ms
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 7 packets received, 0% packet loss
+round-trip min/avg/max = 0.596/0.731/0.925 ms
+
+5.
+
+docker start pinger
+
+pinger
+
+6.
+
+docker ps -a
+
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS          PORTS     NAMES
+04ed38b9133a   busybox   "ping netology.ru"   7 minutes ago   Up 55 seconds             pinger
+
+7.
+
+docker logs pinger
+
+PING netology.ru (172.67.43.83): 56 data bytes
+64 bytes from 172.67.43.83: seq=0 ttl=60 time=0.925 ms
+64 bytes from 172.67.43.83: seq=1 ttl=60 time=0.596 ms
+64 bytes from 172.67.43.83: seq=2 ttl=60 time=0.735 ms
+64 bytes from 172.67.43.83: seq=3 ttl=60 time=0.809 ms
+64 bytes from 172.67.43.83: seq=4 ttl=60 time=0.735 ms
+64 bytes from 172.67.43.83: seq=5 ttl=60 time=0.627 ms
+64 bytes from 172.67.43.83: seq=6 ttl=60 time=0.691 ms
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 7 packets received, 0% packet loss
+round-trip min/avg/max = 0.596/0.731/0.925 ms
+PING netology.ru (104.22.48.171): 56 data bytes
+64 bytes from 104.22.48.171: seq=0 ttl=60 time=2.335 ms
+64 bytes from 104.22.48.171: seq=1 ttl=60 time=2.084 ms
+64 bytes from 104.22.48.171: seq=2 ttl=60 time=2.122 ms
+64 bytes from 104.22.48.171: seq=3 ttl=60 time=2.093 ms
+64 bytes from 104.22.48.171: seq=4 ttl=60 time=2.154 ms
+64 bytes from 104.22.48.171: seq=5 ttl=60 time=2.701 ms
+64 bytes from 104.22.48.171: seq=6 ttl=60 time=2.427 ms
+64 bytes from 104.22.48.171: seq=7 ttl=60 time=2.164 ms
+64 bytes from 104.22.48.171: seq=8 ttl=60 time=2.029 ms
+64 bytes from 104.22.48.171: seq=9 ttl=60 time=2.070 ms
+64 bytes from 104.22.48.171: seq=10 ttl=60 time=2.106 ms
+64 bytes from 104.22.48.171: seq=11 ttl=60 time=2.141 ms
+64 bytes from 104.22.48.171: seq=12 ttl=60 time=2.059 ms
+64 bytes from 104.22.48.171: seq=13 ttl=60 time=2.097 ms
+64 bytes from 104.22.48.171: seq=14 ttl=60 time=2.114 ms
+64 bytes from 104.22.48.171: seq=15 ttl=60 time=2.072 ms
+64 bytes from 104.22.48.171: seq=16 ttl=60 time=2.113 ms
+64 bytes from 104.22.48.171: seq=17 ttl=60 time=2.071 ms
+64 bytes from 104.22.48.171: seq=18 ttl=60 time=2.147 ms
+64 bytes from 104.22.48.171: seq=19 ttl=60 time=2.138 ms
+64 bytes from 104.22.48.171: seq=20 ttl=60 time=2.137 ms
+64 bytes from 104.22.48.171: seq=21 ttl=60 time=2.128 ms
+64 bytes from 104.22.48.171: seq=22 ttl=60 time=2.080 ms
+64 bytes from 104.22.48.171: seq=23 ttl=60 time=2.020 ms
+64 bytes from 104.22.48.171: seq=24 ttl=60 time=2.161 ms
+64 bytes from 104.22.48.171: seq=25 ttl=60 time=2.139 ms
+64 bytes from 104.22.48.171: seq=26 ttl=60 time=2.248 ms
+64 bytes from 104.22.48.171: seq=27 ttl=60 time=2.366 ms
+64 bytes from 104.22.48.171: seq=28 ttl=60 time=2.040 ms
+64 bytes from 104.22.48.171: seq=29 ttl=60 time=2.039 ms
+64 bytes from 104.22.48.171: seq=30 ttl=60 time=2.063 ms
+64 bytes from 104.22.48.171: seq=31 ttl=60 time=2.060 ms
+64 bytes from 104.22.48.171: seq=32 ttl=60 time=2.058 ms
+64 bytes from 104.22.48.171: seq=33 ttl=60 time=2.133 ms
+64 bytes from 104.22.48.171: seq=34 ttl=60 time=2.113 ms
+64 bytes from 104.22.48.171: seq=35 ttl=60 time=2.360 ms
+64 bytes from 104.22.48.171: seq=36 ttl=60 time=2.038 ms
+64 bytes from 104.22.48.171: seq=37 ttl=60 time=2.133 ms
+64 bytes from 104.22.48.171: seq=38 ttl=60 time=2.084 ms
+64 bytes from 104.22.48.171: seq=39 ttl=60 time=2.090 ms
+64 bytes from 104.22.48.171: seq=40 ttl=60 time=3.847 ms
+64 bytes from 104.22.48.171: seq=41 ttl=60 time=2.070 ms
+64 bytes from 104.22.48.171: seq=42 ttl=60 time=2.191 ms
+64 bytes from 104.22.48.171: seq=43 ttl=60 time=2.247 ms
+64 bytes from 104.22.48.171: seq=44 ttl=60 time=2.371 ms
+64 bytes from 104.22.48.171: seq=45 ttl=60 time=2.130 ms
+64 bytes from 104.22.48.171: seq=46 ttl=60 time=2.127 ms
+64 bytes from 104.22.48.171: seq=47 ttl=60 time=2.024 ms
+64 bytes from 104.22.48.171: seq=48 ttl=60 time=2.269 ms
+64 bytes from 104.22.48.171: seq=49 ttl=60 time=2.120 ms
+64 bytes from 104.22.48.171: seq=50 ttl=60 time=2.055 ms
+64 bytes from 104.22.48.171: seq=51 ttl=60 time=2.058 ms
+64 bytes from 104.22.48.171: seq=52 ttl=60 time=2.058 ms
+64 bytes from 104.22.48.171: seq=53 ttl=60 time=2.080 ms
+64 bytes from 104.22.48.171: seq=54 ttl=60 time=2.057 ms
+64 bytes from 104.22.48.171: seq=55 ttl=60 time=2.188 ms
+64 bytes from 104.22.48.171: seq=56 ttl=60 time=2.019 ms
+64 bytes from 104.22.48.171: seq=57 ttl=60 time=2.046 ms
+64 bytes from 104.22.48.171: seq=58 ttl=60 time=2.120 ms
+64 bytes from 104.22.48.171: seq=59 ttl=60 time=2.264 ms
+64 bytes from 104.22.48.171: seq=60 ttl=60 time=2.175 ms
+64 bytes from 104.22.48.171: seq=61 ttl=60 time=2.090 ms
+64 bytes from 104.22.48.171: seq=62 ttl=60 time=2.124 ms
+64 bytes from 104.22.48.171: seq=63 ttl=60 time=2.727 ms
+64 bytes from 104.22.48.171: seq=64 ttl=60 time=6.265 ms
+64 bytes from 104.22.48.171: seq=65 ttl=60 time=2.135 ms
+64 bytes from 104.22.48.171: seq=66 ttl=60 time=2.215 ms
+64 bytes from 104.22.48.171: seq=67 ttl=60 time=2.221 ms
+64 bytes from 104.22.48.171: seq=68 ttl=60 time=2.137 ms
+64 bytes from 104.22.48.171: seq=69 ttl=60 time=2.184 ms
+64 bytes from 104.22.48.171: seq=70 ttl=60 time=2.219 ms
+64 bytes from 104.22.48.171: seq=71 ttl=60 time=2.128 ms
+64 bytes from 104.22.48.171: seq=72 ttl=60 time=2.074 ms
+64 bytes from 104.22.48.171: seq=73 ttl=60 time=2.051 ms
+64 bytes from 104.22.48.171: seq=74 ttl=60 time=2.009 ms
+64 bytes from 104.22.48.171: seq=75 ttl=60 time=2.173 ms
+64 bytes from 104.22.48.171: seq=76 ttl=60 time=2.005 ms
+64 bytes from 104.22.48.171: seq=77 ttl=60 time=2.041 ms
+64 bytes from 104.22.48.171: seq=78 ttl=60 time=2.302 ms
+64 bytes from 104.22.48.171: seq=79 ttl=60 time=2.068 ms
+64 bytes from 104.22.48.171: seq=80 ttl=60 time=2.396 ms
+64 bytes from 104.22.48.171: seq=81 ttl=60 time=3.326 ms
+64 bytes from 104.22.48.171: seq=82 ttl=60 time=2.036 ms
+64 bytes from 104.22.48.171: seq=83 ttl=60 time=2.391 ms
+64 bytes from 104.22.48.171: seq=84 ttl=60 time=2.374 ms
+64 bytes from 104.22.48.171: seq=85 ttl=60 time=2.062 ms
+64 bytes from 104.22.48.171: seq=86 ttl=60 time=2.027 ms
+64 bytes from 104.22.48.171: seq=87 ttl=60 time=2.063 ms
+64 bytes from 104.22.48.171: seq=88 ttl=60 time=2.074 ms
+64 bytes from 104.22.48.171: seq=89 ttl=60 time=2.076 ms
+64 bytes from 104.22.48.171: seq=90 ttl=60 time=2.083 ms
+64 bytes from 104.22.48.171: seq=91 ttl=60 time=2.056 ms
+64 bytes from 104.22.48.171: seq=92 ttl=60 time=2.060 ms
+64 bytes from 104.22.48.171: seq=93 ttl=60 time=2.347 ms
+64 bytes from 104.22.48.171: seq=94 ttl=60 time=3.052 ms
+64 bytes from 104.22.48.171: seq=95 ttl=60 time=2.044 ms
+64 bytes from 104.22.48.171: seq=96 ttl=60 time=2.437 ms
+64 bytes from 104.22.48.171: seq=97 ttl=60 time=2.106 ms
+64 bytes from 104.22.48.171: seq=98 ttl=60 time=2.051 ms
+64 bytes from 104.22.48.171: seq=99 ttl=60 time=2.162 ms
+64 bytes from 104.22.48.171: seq=100 ttl=60 time=2.221 ms
+64 bytes from 104.22.48.171: seq=101 ttl=60 time=2.115 ms
+64 bytes from 104.22.48.171: seq=102 ttl=60 time=2.273 ms
+64 bytes from 104.22.48.171: seq=103 ttl=60 time=2.306 ms
+64 bytes from 104.22.48.171: seq=104 ttl=60 time=2.028 ms
+64 bytes from 104.22.48.171: seq=105 ttl=60 time=2.113 ms
+64 bytes from 104.22.48.171: seq=106 ttl=60 time=2.092 ms
+64 bytes from 104.22.48.171: seq=107 ttl=60 time=2.069 ms
+64 bytes from 104.22.48.171: seq=108 ttl=60 time=2.121 ms
+64 bytes from 104.22.48.171: seq=109 ttl=60 time=2.018 ms
+64 bytes from 104.22.48.171: seq=110 ttl=60 time=2.821 ms
+64 bytes from 104.22.48.171: seq=111 ttl=60 time=2.108 ms
+64 bytes from 104.22.48.171: seq=112 ttl=60 time=2.137 ms
+64 bytes from 104.22.48.171: seq=113 ttl=60 time=2.042 ms
+64 bytes from 104.22.48.171: seq=114 ttl=60 time=2.031 ms
+64 bytes from 104.22.48.171: seq=115 ttl=60 time=2.134 ms
+64 bytes from 104.22.48.171: seq=116 ttl=60 time=2.374 ms
+64 bytes from 104.22.48.171: seq=117 ttl=60 time=2.136 ms
+64 bytes from 104.22.48.171: seq=118 ttl=60 time=2.081 ms
+64 bytes from 104.22.48.171: seq=119 ttl=60 time=2.066 ms
+64 bytes from 104.22.48.171: seq=120 ttl=60 time=2.150 ms
+64 bytes from 104.22.48.171: seq=121 ttl=60 time=2.340 ms
+
+8.
+
+2 запуска, 122+7=129 количество запросов
+
+9.
+
+docker rm pinger
+
+pinger
+
+10.
+
+docker rmi busybox
+
+Untagged: busybox:latest
+Untagged: busybox@sha256:930490f97e5b921535c153e0e7110d251134cc4b72bbb8133c6a5065cc68580d
+Deleted: sha256:69593048aa3acfee0f75f20b77acb549de2472063053f6730c4091b53f2dfb02
+Deleted: sha256:5b8c72934dfc08c7d2bd707e93197550f06c0751023dabb3a045b723c5e7b373
+
+
